@@ -13,7 +13,7 @@ class Modal extends Component {
   render() {
     <BackDrop>
       <div>
-        <input type='text' />
+        <input type="text" />
       </div>
     </BackDrop>;
   }
