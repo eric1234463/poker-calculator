@@ -30,6 +30,7 @@ const Input = styled.input`
   width: 100%;
   padding: 12px 0;
   text-align: center;
+  box-sizing: border-box;
 `;
 
 const Button = styled.button`
@@ -41,6 +42,7 @@ const Button = styled.button`
   text-align: center;
   margin: 0 auto;
   padding: 12px 0;
+  box-sizing: border-box;
 `;
 
 class Modal extends Component {
