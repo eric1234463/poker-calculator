@@ -11,27 +11,53 @@ const BackDrop = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: #fff;
-  border-radius: 4px;
-  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  position: fixed;
   width: 100%;
-  height: 500px;
+  > div {
+    background: #fff;
+    border-radius: 4px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+`;
+
+const Input = styled.input`
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+`;
+
+const Button = styled.button`
+  background: rgba(23, 179, 163, 1);
+  border-radius: 4px;
+  width: 80%;
+  display: block;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 12px 0;
 `;
 
 class Modal extends Component {
   render() {
     const { handleModalShow } = this.props;
     return (
-      <BackDrop onClick={handleModalShow}>
+      <div>
+        <BackDrop onClick={handleModalShow} />
         <Wrapper>
-          <input type="text" />
-          <input type="text" />
-          <input type="text" />
+          <div>
+            <Input type="text" placeholder={'Player 1'} />
+            <Input type="text" placeholder={'Player 1'} />
+            <Input type="text" placeholder={'Player 1'} />
+            <Button type="button">Submit</Button>
+          </div>
         </Wrapper>
-      </BackDrop>
+      </div>
     );
   }
 }
