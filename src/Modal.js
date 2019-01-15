@@ -9,13 +9,30 @@ const BackDrop = styled.div`
   left: 0;
   bottom: 0;
 `;
+
+const Wrapper = styled.div`
+  background: #fff;
+  border-radius: 4px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 500px;
+`;
+
 class Modal extends Component {
   render() {
-    <BackDrop>
-      <div>
-        <input type="text" />
-      </div>
-    </BackDrop>;
+    const { handleModalShow } = this.props;
+    return (
+      <BackDrop onClick={handleModalShow}>
+        <Wrapper>
+          <input type="text" />
+          <input type="text" />
+          <input type="text" />
+        </Wrapper>
+      </BackDrop>
+    );
   }
 }
 

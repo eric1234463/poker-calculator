@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Modal from './Modal';
 
 const PlayerCard = styled.div`
   display: block;
@@ -90,14 +91,23 @@ class App extends Component {
     ],
     rounds: 0,
     price: 1,
+    isModalShow: false,
   };
 
   handleWinner = (index) => () => {
-    
+    this.setState({
+      isModalShow: true
+    })
+  };
+
+  handleModalShow = () => {
+    this.setState({
+      isModalShow: !this.state.isModalShow,
+    });
   };
 
   render() {
-    const { players, rounds, price } = this.state;
+    const { players, rounds, price, isModalShow } = this.state;
     return (
       <Container>
         <Title>Round : {rounds}</Title>
@@ -111,6 +121,7 @@ class App extends Component {
             </div>
           </PlayerCard>
         ))}
+        {isModalShow && <Modal handleModalShow={this.handleModalShow} />}
       </Container>
     );
   }
