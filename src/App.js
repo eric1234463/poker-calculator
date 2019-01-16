@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Modal from './Modal';
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    font-family: 'Lato', sans-serif;
+  }
+`;
 
 const PlayerCard = styled.div`
   display: block;
@@ -110,6 +116,7 @@ class App extends Component {
     const { players, rounds, price, isModalShow } = this.state;
     return (
       <Container>
+        <GlobalStyle />
         <Title>Round : {rounds}</Title>
         <Label>Price Per Card : {price}</Label>
         {players.map((player, index) => (
